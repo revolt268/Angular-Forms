@@ -23,6 +23,14 @@ export class UserSettingsFormComponent implements OnInit {
    postError = false;
    postErrorMessage = '';
    subscriptionTypes: Observable<string[]> | undefined;
+   singleModel = "On";
+   startDate: Date = new Date();
+   startTime = new Date();
+
+   // Rating
+   maxRating: number = 10;
+   userRating: number = 0;
+
 
   constructor(private dataService: DataService) { }
 
@@ -37,7 +45,7 @@ export class UserSettingsFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-     console.log('in onSubmit: ', form.valid);
+     console.log('in onSubmit: ', form.value);
 
      if (form.valid){
       this.dataService.postUserSettingsForm(this.userSettings).subscribe(
