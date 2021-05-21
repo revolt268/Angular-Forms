@@ -14,9 +14,9 @@ export class DataService {
    return of(['Monthly', 'Annual', 'Lifetime']);
 }
 
+/* PutsReq is a site that lets you test posts to Http*/
   postUserSettingsForm(userSettings: UserSettings) : Observable<any> {
    return this.http.post('https://putsreq.com/zmZ0OUlEhyXbkbyLTL9X', userSettings);   
    //return of(userSettings);
-
   }
 }
